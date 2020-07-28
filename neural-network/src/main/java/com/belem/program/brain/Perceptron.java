@@ -24,10 +24,12 @@ public class Perceptron{
     
     }
 
+    //x / ( 1 + e^-x)
     private static double sigmoid(double num){
         return num / (1 + Math.exp(-num));
     }
 
+    //x * sigmoid(x)
     private static double swish(double num){
         return num * sigmoid(num);
     }
