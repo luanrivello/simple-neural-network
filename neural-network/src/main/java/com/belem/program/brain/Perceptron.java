@@ -20,23 +20,8 @@ public class Perceptron{
             sum = sum + weights[i]*inputs[i];
         }
 
-        return actFunc(sum);
+        return ActivationFunctions.mish(sum);
     
-    }
-
-    //x / ( 1 + e^-x)
-    private static double sigmoid(double num){
-        return num / (1 + Math.exp(-num));
-    }
-
-    //x * sigmoid(x) 
-    private static double swish(double num){
-        return num * sigmoid(num);
-    }
-
-    //Activation function
-    private double actFunc(double num){
-        return swish(num);
     }
 
     public double[] getWeights() {
