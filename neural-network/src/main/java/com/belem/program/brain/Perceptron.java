@@ -29,11 +29,12 @@ public class Perceptron{
         return num / (1 + Math.exp(-num));
     }
 
-    //x * sigmoid(x)
+    //x * sigmoid(x) 
     private static double swish(double num){
         return num * sigmoid(num);
     }
 
+    //Activation function
     private double actFunc(double num){
         return swish(num);
     }
