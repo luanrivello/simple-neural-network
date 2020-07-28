@@ -1,2 +1,2 @@
-# neural-network
+# Simple Neural Network
  Basic neural network project
