@@ -3,7 +3,7 @@ package com.belem.program.brain;
 public class ActivationFunctions{
     //https://en.wikipedia.org/wiki/Activation_function
     
-    //x / ( 1 + e^-x)
+    //sigmoid => x / ( 1 + e^-x)
     static double sigmoid(double num){
         return 1 / (1 + Math.exp(-num));
     }
@@ -13,17 +13,17 @@ public class ActivationFunctions{
         return Math.tanh(num);
     }
 
-    //x * sigmoid(x) 
+    //swish => x * sigmoid(x) 
     static double swish(double num){
         return num * sigmoid(num);
     }
 
-    //ln(1 + e^x)
+    //softplus => ln(1 + e^x)
     static double softplus(double num){
         return Math.log(1 + Math.exp(num));
     }
 
-    //x * tanh(softplus(x))
+    //mish => x * tanh(softplus(x))
     static double mish(double num){
         return num * tanh(softplus(num));
     }
