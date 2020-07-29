@@ -20,7 +20,7 @@ public class Perceptron{
             sum = sum + weights[i]*inputs[i];
         }
 
-        return ActivationFunctions.mish(sum);
+        return ActivationFunctions.sigmoid(sum);
     
     }
 
