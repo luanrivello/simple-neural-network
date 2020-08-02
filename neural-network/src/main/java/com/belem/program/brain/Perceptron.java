@@ -1,14 +1,26 @@
 package com.belem.program.brain;
 
-public class Perceptron{
+import java.security.SecureRandom;
 
+public class Perceptron{
     private double[] weights;
 
-    private Perceptron(int wqtd) {
-        weights = new double[wqtd];
+    public Perceptron(){
+        SecureRandom random = new SecureRandom();
+        for (int i = 0; i < weights.length; i++){
+            weights[i] = random.nextGaussian(); 
+        }
     }
 
-    private Perceptron(double[] weights) {       
+    public Perceptron(int wqtd) {
+        weights = new double[wqtd];
+        SecureRandom random = new SecureRandom();
+        for (int i = 0; i < weights.length; i++){
+            weights[i] = Math.abs(random.nextGaussian()) ; 
+        }
+    }
+
+    public Perceptron(double[] weights) {       
         this.weights = weights;
     }
 
