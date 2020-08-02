@@ -3,7 +3,11 @@ package com.belem.program.brain;
 import java.security.SecureRandom;
 
 public class Perceptron{
+    //weights
     private double[] weights;
+    
+    //learning rate
+    private double lr = 0.1;
 
     public Perceptron(){
         SecureRandom random = new SecureRandom();
@@ -24,7 +28,7 @@ public class Perceptron{
         this.weights = weights;
     }
 
-    public int guess(double[] inputs){
+    public double guess(double[] inputs){
         double sum = 0;
         int i;
 
@@ -32,14 +36,13 @@ public class Perceptron{
             sum = sum + weights[i]*inputs[i];
         }
 
-        return 0.5 < ActivationFunctions.sigmoid(sum) ? 1:0;
+        return ActivationFunctions.sigmoid(sum);
     
     }
 
     public void train(double[] inputs, int target){
-        int guess = guess(inputs);
-        int error = target - guess;
-        double lr = 0.1;
+        double guess = guess(inputs);
+        double error = target - guess;
 
         for (int i = 0; i < weights.length; i++){
             weights[i] = weights[i] + error*inputs[i]*lr;
