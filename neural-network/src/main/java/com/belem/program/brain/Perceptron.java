@@ -24,16 +24,27 @@ public class Perceptron{
         this.weights = weights;
     }
 
-    public double guess(double[] inputs){
+    public int guess(double[] inputs){
         double sum = 0;
         int i;
 
-        for(i = 0; i < weights.length;){
+        for(i = 0; i < weights.length; i++){
             sum = sum + weights[i]*inputs[i];
         }
 
-        return ActivationFunctions.sigmoid(sum);
+        return 0.5 < ActivationFunctions.sigmoid(sum) ? 1:0;
     
+    }
+
+    public void train(double[] inputs, int target){
+        int guess = guess(inputs);
+        int error = target - guess;
+        double lr = 0.1;
+
+        for (int i = 0; i < weights.length; i++){
+            weights[i] = weights[i] + error*inputs[i]*lr;
+        }
+
     }
 
     public double[] getWeights() {
