@@ -3,6 +3,14 @@ package com.belem.program.brain;
 public class ActivationFunctions{
     //https://en.wikipedia.org/wiki/Activation_function
     
+    static double sing(double num){
+        if(num >= 0){
+            return 1;
+        }else{
+            return 0;
+        }
+    }
+
     //sigmoid => x / ( 1 + e^-x)
     static double sigmoid(double num){
         return 1 / (1 + Math.exp(-num));
