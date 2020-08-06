@@ -36,7 +36,7 @@ public class Perceptron{
             sum = sum + weights[i]*inputs[i];
         }
 
-        return ActivationFunctions.sigmoid(sum);
+        return ActivationFunctions.sing(sum);
     
     }
 
