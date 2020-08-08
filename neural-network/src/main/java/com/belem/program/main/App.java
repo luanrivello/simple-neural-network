@@ -17,7 +17,7 @@ public class App{
         for (int i = 0; i < data.length; i++) {
             data[i][0] = rd.nextInt(5)-4;
             data[i][1] = rd.nextInt(5)-4;
-            data[i][2] = 1;
+            data[i][2] = 1; //bias
         }
 
         //train
