@@ -1,7 +1,5 @@
 package com.belem.program.brain;
 
-import java.util.Properties;
-
 public class NeuralNetwork {
     
     private int input;
@@ -25,4 +23,5 @@ public class NeuralNetwork {
     public int getOutput() { 
         return output;
     }
+
 }
