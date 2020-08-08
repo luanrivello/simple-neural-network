@@ -45,7 +45,7 @@ public class Perceptron{
         double error = target - guess;
 
         for (int i = 0; i < weights.length; i++){
-            weights[i] = weights[i] + error*inputs[i]*lr;
+            weights[i] = weights[i] + error*inputs[i]*lr ;
         }
 
     }
