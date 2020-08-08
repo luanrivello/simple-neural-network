@@ -19,10 +19,10 @@ public class NeuralNetwork {
     }
 
     public int getHidden() { 
-        return input;
+        return hidden;
     }
 
     public int getOutput() { 
-        return input;
+        return output;
     }
 }
